@@ -1,59 +1,64 @@
 # Portfolio
+[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/Xenio29/portfolio-app)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.4.
+This is a personal portfolio application developed with Angular, designed to showcase a collection of projects in a dynamic and visually appealing manner. The main feature is an interactive 3D project carousel that users can navigate via mouse wheel, drag, or touch gestures.
 
-## Development server
+## Key Features
 
-To start a local development server, run:
+*   **Interactive 3D Carousel**: Navigate through projects with smooth transitions and a 3D perspective effect.
+*   **Multiple Control Methods**: Interact with the carousel using the mouse wheel, click-and-drag, or touch gestures on mobile devices.
+*   **Responsive Design**: A fully responsive layout that adapts to various screen sizes, from mobile to desktop.
+*   **Collapsible Menu Bar**: A sticky navigation bar that automatically collapses into a compact logo on scroll and can be toggled manually.
+*   **System-Aware Theme**: Automatically switches between light and dark modes based on the user's system preferences.
+*   **Animated SVG Icons**: The menu bar features animated SVG icons for a modern and engaging feel.
 
-```bash
-ng serve
-```
+## Core Components
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+*   **`MenuBar`**: A sticky navigation bar at the top. It handles its own collapse/expand state based on user scroll and direct interaction, providing a clean UI.
+*   **`Projets`**: This component manages the main content—the interactive project carousel. It listens for user input (wheel, mouse drag, touch) to update the carousel's state and position.
+*   **`CarouselCards`**: A reusable component that represents a single project card in the carousel. It receives project data like title, description, and image as inputs to display.
 
-## Code scaffolding
+## Getting Started
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+To get a local copy up and running, follow these simple steps.
 
-```bash
-ng generate component component-name
-```
+### Prerequisites
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Make sure you have Node.js and the Angular CLI installed.
 
-```bash
-ng generate --help
-```
+*   [Node.js](https://nodejs.org/)
+*   Install Angular CLI globally:
+    ```sh
+    npm install -g @angular/cli
+    ```
 
-## Building
+### Installation & Setup
 
-To build the project run:
+1.  Clone the repository:
+    ```sh
+    git clone https://github.com/xenio29/portfolio-app.git
+    ```
+2.  Navigate to the project directory:
+    ```sh
+    cd portfolio-app
+    ```
+3.  Install NPM packages:
+    ```sh
+    npm install
+    ```
 
-```bash
-ng build
-```
+## Available Scripts
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+The `package.json` file includes the following scripts:
 
-## Running unit tests
+### `npm start`
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Runs the app in development mode. Open [http://localhost:4200](http://localhost:4200) to view it in the browser. The page will reload if you make edits.
 
-```bash
-ng test
-```
+### `npm run build`
 
-## Running end-to-end tests
+Builds the app for production. It correctly bundles Angular in production mode and optimizes the build for the best performance. The build artifacts are stored in the `docs/` directory, configured for deployment to GitHub Pages.
 
-For end-to-end (e2e) testing, run:
+### `npm test`
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Launches the test runner in interactive watch mode using Vitest.
