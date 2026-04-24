@@ -3,10 +3,18 @@
 	flex-direction: column;
 	height: 100vh;
 	overflow: hidden;
+	min-width: 0;
 }
 
 app-projets {
 	flex: 1;
 	min-height: 0;
 	display: block;
+	min-width: 0;
+}
+
+@media (max-width: 768px) {
+	:host {
+		height: 100svh;
+	}
 }
