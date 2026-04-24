@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #F4EBD3;
+    color: #3C6F71;
+    
+    a {
+        text-decoration: none;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #3C6F71;
+        color: #F4EBD3;
+    }
+}

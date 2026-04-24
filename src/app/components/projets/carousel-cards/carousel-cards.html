@@ -1,0 +1,10 @@
+<div class="carousel-item">
+	<div class="carousel-box">
+		<div class="title">
+			<h3>{{ title() }}</h3>
+			<p>{{ description() }}</p>
+		</div>
+		<div class="num">{{ number() }}</div>
+		<img [class]="'placeholder ' + imageClass()" [src]="imageSrc()" [alt]="imageAlt()" loading="lazy" />
+	</div>
+</div>
