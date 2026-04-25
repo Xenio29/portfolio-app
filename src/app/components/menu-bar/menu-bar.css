@@ -51,6 +51,7 @@
     margin-left: 2rem;
     border-radius: 1rem;
     transition: all 190ms ease-in-out;
+    background-color: #f4ebd3;
 }
 
 .list li a {
@@ -63,18 +64,18 @@
 .list li svg {
     height: 45px;
     width: 45px;
-    color: #a1cbce;
+    color: #1E2B40;
 }
 
 .list li:hover {
-    background-color: rgba(76, 154, 160, 0.28);
+    background-color: rgba(115, 216, 223, 0.28);
 }
 
 .logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #468486;
+    background-color: #f4ebd3;
     height: 68px;
     width: 68px;
     margin: auto 0;
@@ -112,8 +113,8 @@
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
-    background: #468486;
-    border: 1px solid #3F7678;
+    background: #f4ebd3;
+    border: 1px solid transparent;
     transition: all 180ms ease-in-out;
 }
 
@@ -130,7 +131,7 @@
 }
 
 .menu-button:hover {
-    background: #468486;
+    background: #ded3c4;
 }
 
 .menu-toggle:checked + .menu-button span:nth-child(1) {
@@ -221,6 +222,7 @@
     .logo > img {
         position: relative;
         top: 1%;
+        left: 0.2vw;
         height: 15%;
         width: auto;
         margin-bottom: auto;
@@ -293,11 +295,15 @@
     }
 
     .menu-button:hover {
-        background: rgba(244, 235, 211, 0.98);
+        background: #367375;
+    }
+
+    .list li {
+        background-color: #468486;
     }
 
     .list li svg {
-        color: #a1cbce;
+        color: #1E2B40;
     }
 
     .list li:hover {
