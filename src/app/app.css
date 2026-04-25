@@ -1,20 +1,74 @@
 :host {
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-	overflow: hidden;
+	display: block;
+	min-height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+	scroll-behavior: smooth;
 	min-width: 0;
 }
 
-app-projets {
-	flex: 1;
-	min-height: 0;
+app-menu-bar {
 	display: block;
+	position: sticky;
+	top: 0;
+	z-index: 80;
+}
+
+app-projets {
+	display: block;
+	min-height: 100vh;
+	height: 100vh;
 	min-width: 0;
+}
+
+.back-to-top {
+	position: fixed;
+	right: 16px;
+	bottom: 16px;
+	width: 38px;
+	height: 38px;
+	border-radius: 999px;
+	display: grid;
+	place-items: center;
+	font-size: 1rem;
+	font-weight: 600;
+	text-decoration: none;
+	color: #1a3e71;
+	background: linear-gradient(135deg, rgba(249, 210, 148, 0.98), rgba(233, 234, 236, 0.92));
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	border: 1px solid rgba(26, 62, 113, 0.2);
+	box-shadow: 0 6px 16px rgba(1, 5, 53, 0.18);
+	z-index: 85;
+	transition: transform 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.back-to-top:hover {
+	background: linear-gradient(135deg, rgba(249, 210, 148, 1), rgba(233, 234, 236, 0.96));
+	transform: translateY(-1px);
+	box-shadow: 0 8px 18px rgba(1, 5, 53, 0.24);
+}
+
+.back-to-top:focus-visible {
+	outline: 2px solid rgba(26, 62, 113, 0.95);
+	outline-offset: 2px;
 }
 
 @media (max-width: 768px) {
 	:host {
+		min-height: 100svh;
+	}
+
+	app-projets {
+		min-height: 100svh;
 		height: 100svh;
+	}
+
+	.back-to-top {
+		right: 10px;
+		bottom: 10px;
+		width: 34px;
+		height: 34px;
+		font-size: 0.95rem;
 	}
 }

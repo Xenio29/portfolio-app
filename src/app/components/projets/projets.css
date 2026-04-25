@@ -4,23 +4,12 @@
   height: 100%;
   min-height: 0;
   overflow: hidden;
-  --ph-base-1: #ded3c4;
-  --ph-base-2: #bab1a4;
-  --ph-accent-1: #606c8f;
-  --ph-accent-2: #2f4763;
-  --ph-accent-3: #04243a;
-  --ph-line: rgba(255, 255, 255, 0.24);
-}
-
-@media (prefers-color-scheme: dark) {
-  :host {
-    --ph-base-1: #202a36;
-    --ph-base-2: #2c3948;
-    --ph-accent-1: #7d8ead;
-    --ph-accent-2: #98acc6;
-    --ph-accent-3: #cfd8e4;
-    --ph-line: rgba(255, 255, 255, 0.18);
-  }
+  --ph-base-1: #f9d294;
+  --ph-base-2: #dfb880;
+  --ph-accent-1: #e9eaec;
+  --ph-accent-2: #1a3e71;
+  --ph-accent-3: #010535;
+  --ph-line: rgba(26, 62, 113, 0.11);
 }
 
 .carousel {
@@ -149,7 +138,7 @@
     left: 90px;
     width: 10px;
     height: 100%;
-    border: 1px solid #fff;
+    border: 1px solid #e9eaec;
     border-top: none;
     border-bottom: none;
     opacity: .15;
@@ -159,7 +148,7 @@
     position: absolute;
     bottom: 0;
     left: 30px;
-    color: #fff;
+    color: #e9eaec;
     transform-origin: 0% 10%;
     transform: rotate(-90deg);
     font-size: 9px;

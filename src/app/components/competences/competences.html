@@ -1,0 +1,81 @@
+<section class="competences-section" id="competences">
+	<div class="competences-shell">
+		<div class="intro-row">
+			<ul class="skills-bar-container" aria-label="Niveau des technologies">
+				@for (skill of skills; track skill.key) {
+					<li>
+						<div class="progressbar-title">
+							<h3>{{ skill.label }}</h3>
+							<span class="percent">{{ displayedPercents[skill.key] }}</span>
+						</div>
+						<div class="bar-container">
+							<span
+								[class]="'progressbar ' + skill.colorClass"
+								[style.--target-width]="skill.percent"
+								[style.--order]="skill.order"
+							></span>
+						</div>
+					</li>
+				}
+			</ul>
+
+			<header class="section-header">
+				<p class="eyebrow">Parcours</p>
+				<h2>Competences</h2>
+				<p>Une vue rapide de mon experience, des projets marquants et des etapes qui ont construit mon profil.</p>
+			</header>
+		</div>
+
+		<ul class="timeline">
+			<li class="timeline-item direction-r">
+				<div class="entry">
+					<div class="entry-head">
+						<span class="flag">Début Web</span>
+						<span class="time">2021 - 2021</span>
+					</div>
+					<p class="desc">Début de la programmation pour moi, avec le HTML/CSS</p>
+				</div>
+			</li>
+
+			<li class="timeline-item direction-l">
+				<div class="entry">
+					<div class="entry-head">
+						<span class="flag">Logiciels</span>
+						<span class="time">2021 - 2022</span>
+					</div>
+					<p class="desc">Premier changement d'axe, avec Java et NetBeans, j'ai fait des logiciels en tout genre pour me défier</p>
+				</div>
+			</li>
+
+			<li class="timeline-item direction-r">
+				<div class="entry">
+					<div class="entry-head">
+						<span class="flag">Jeux vidéos</span>
+						<span class="time">2022 - 2024</span>
+					</div>
+					<p class="desc">J'y ai consacré une bonne partie de mes compétences, car j'aimais ça et j'étais jeune, sur Unity (C#) et Unreal Engine (C++/BluePrint) + Modélisation 3D</p>
+				</div>
+			</li>
+
+            <li class="timeline-item direction-l">
+				<div class="entry">
+					<div class="entry-head">
+						<span class="flag">Arduino/électronique</span>
+						<span class="time">2024 - 2025</span>
+					</div>
+					<p class="desc">Grâce aux Olympiades Nationales de Physique, j'ai fait un robot radar routier avec du C++, des composants PCB custom et une imprimante 3D</p>
+				</div>
+			</li>
+
+			<li class="timeline-item direction-r">
+				<div class="entry">
+					<div class="entry-head">
+						<span class="flag">Web avancé (Full Stack)</span>
+						<span class="time">2025 - aujourd'hui</span>
+					</div>
+					<p class="desc">Apprentissage de plusieurs languages plus poussées comme le PHP, SQL, Angular, JS, etc...</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+</section>

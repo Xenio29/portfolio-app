@@ -1,18 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --pal-burlywood: #dfb880;
+    --pal-eggnog: #f9d294;
+    --pal-silver: #e9eaec;
+    --pal-sapphire: #1a3e71;
+    --pal-navy: #010535;
+}
+
 body {
     margin: 0;
     min-height: 100vh;
-    background-color: #F4EBD3;
-    color: #3C6F71;
+    background-color: hsla(199, 0%, 96%, 1);
+    color: var(--pal-sapphire);
     
     a {
         text-decoration: none;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #3C6F71;
-        color: #F4EBD3;
     }
 }

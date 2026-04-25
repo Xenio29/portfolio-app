@@ -8,12 +8,14 @@ import { Component, HostListener } from '@angular/core';
 })
 export class MenuBar {
   isCollapsed = false;
+  isFloating = false;
   private wasExpandedByLogo = false;
 
   @HostListener('window:scroll')
   onWindowScroll(): void {
     const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
     const shouldCollapse = scrollTop > 24;
+    this.isFloating = shouldCollapse;
 
     if (!shouldCollapse) {
       this.wasExpandedByLogo = false;

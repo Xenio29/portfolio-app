@@ -8,19 +8,65 @@
 }
 
 .container {
-    background: rgba(222, 211, 196, 0.44);
+    background: rgba(233, 234, 236, 0.86);
     backdrop-filter: blur(12px) saturate(140%);
     -webkit-backdrop-filter: blur(12px) saturate(140%);
-    border: 1px solid rgba(255, 255, 255, 0.22);
+    border: 1px solid rgba(26, 62, 113, 0.14);
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 16px;
     padding: 8px 22px;
     border-radius: 1rem;
-    box-shadow: 0 10px 30px rgba(58, 83, 94, 0.22);
+    box-shadow: 0 10px 30px rgba(1, 5, 53, 0.2);
     position: relative;
     transition: padding 220ms ease, width 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+}
+
+.container.is-floating {
+    position: fixed;
+    top: 10px;
+    left: 12px;
+    z-index: 90;
+    width: fit-content;
+    min-width: 0;
+    gap: 8px;
+    padding: 5px 9px;
+    border-radius: 25px;
+    border-color: rgba(1, 5, 53, 0.22);
+    background: linear-gradient(135deg, rgba(249, 210, 148, 0.96), rgba(233, 234, 236, 0.9));
+    box-shadow: 0 8px 22px rgba(1, 5, 53, 0.2);
+}
+
+.container.is-floating .logo {
+    height: 46px;
+    width: 46px;
+    border-radius: 999px;
+}
+
+.container.is-floating .items {
+    display: block;
+}
+
+.container.is-floating .list {
+    gap: 6px;
+}
+
+.container.is-floating .list li {
+    margin-left: 0;
+    padding: 3px;
+    border-radius: 999px;
+    background-color: rgba(233, 234, 236, 0.98);
+}
+
+.container.is-floating .list li a {
+    padding: 3px;
+}
+
+.container.is-floating .list li svg {
+    height: 24px;
+    width: 24px;
+    color: #1a3e71;
 }
 
 .container.is-collapsed {
@@ -34,7 +80,7 @@
 .container.is-collapsed .menu-button,
 .items.force-hide {
     display: none;
-    color: #315c5e;
+    color: #1a3e71;
 }
 
 .list {
@@ -51,7 +97,7 @@
     margin-left: 2rem;
     border-radius: 1rem;
     transition: all 190ms ease-in-out;
-    background-color: #f4ebd3;
+    background-color: rgba(249, 210, 148, 0.9);
 }
 
 .list li a {
@@ -64,18 +110,18 @@
 .list li svg {
     height: 45px;
     width: 45px;
-    color: #1E2B40;
+    color: #1a3e71;
 }
 
 .list li:hover {
-    background-color: rgba(115, 216, 223, 0.28);
+    background-color: rgba(233, 234, 236, 0.9);
 }
 
 .logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f4ebd3;
+    background-color: #e9eaec;
     height: 68px;
     width: 68px;
     margin: auto 0;
@@ -96,7 +142,7 @@
 }
 
 .logo-button:focus-visible {
-    outline: 2px solid rgba(76, 154, 160, 0.75);
+    outline: 2px solid rgba(26, 62, 113, 0.8);
     outline-offset: 2px;
 }
 
@@ -114,7 +160,7 @@
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
-    background: #f4ebd3;
+    background: #e9eaec;
     border: 1px solid transparent;
     transition: all 180ms ease-in-out;
 }
@@ -128,11 +174,11 @@
     width: 22px;
     height: 2px;
     border-radius: 999px;
-    background: #234243;
+    background: #1a3e71;
 }
 
 .menu-button:hover {
-    background: #ded3c4;
+    background: #f9d294;
 }
 
 .menu-toggle:checked + .menu-button span:nth-child(1) {
@@ -150,6 +196,22 @@
 @media (max-width: 768px) {
     :host {
         padding: 8px 10px 2px;
+    }
+
+    .container.is-floating {
+        top: 8px;
+        left: 10px;
+        padding: 5px 8px;
+    }
+
+    .container.is-floating .logo {
+        height: 42px;
+        width: 42px;
+    }
+
+    .container.is-floating .list li svg {
+        height: 22px;
+        width: 22px;
     }
 
     .container {
@@ -197,12 +259,28 @@
         padding: 6px 8px 0;
     }
 
+    .container.is-floating {
+        top: 6px;
+        left: 8px;
+        padding: 4px 7px;
+    }
+
+    .container.is-floating .logo {
+        height: 40px;
+        width: 40px;
+    }
+
+    .container.is-floating .list li svg {
+        height: 20px;
+        width: 20px;
+    }
+
     .container {
         display: grid;
         grid-template-columns: auto 1fr auto;
         padding: 6px 10px;
         align-items: center;
-        min-height: 70px;
+        min-height: 45px;
         row-gap: 0;
     }
 
@@ -263,42 +341,5 @@
     .list li svg {
         height: 28px;
         width: 28px;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    .container {
-        box-shadow: 0 10px 30px rgba(18, 24, 32, 0.35);
-        background: rgba(35, 66, 67, 0.45);
-        border: 1px solid rgba(186, 208, 214, 0.2);
-    }
-
-    .logo {
-        background-color: #468486;
-    }
-
-    .menu-button {
-        background: #468486;
-        border: 1px solid #3F7678;
-    }
-
-    .menu-button span {
-        background: #1d3537;
-    }
-
-    .menu-button:hover {
-        background: #367375;
-    }
-
-    .list li {
-        background-color: #468486;
-    }
-
-    .list li svg {
-        color: #1E2B40;
-    }
-
-    .list li:hover {
-        background-color: rgba(161, 203, 206, 0.2);
     }
 }
