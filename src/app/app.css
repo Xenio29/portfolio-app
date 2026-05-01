@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 :host {
 	display: block;
 	min-height: 100vh;
@@ -25,13 +27,11 @@ app-projets {
 	position: fixed;
 	right: 16px;
 	bottom: 16px;
-	width: 38px;
-	height: 38px;
+	width: 58px;
+	height: 58px;
 	border-radius: 999px;
 	display: grid;
 	place-items: center;
-	font-size: 1rem;
-	font-weight: 600;
 	text-decoration: none;
 	color: #1a3e71;
 	background: linear-gradient(135deg, rgba(249, 210, 148, 0.98), rgba(233, 234, 236, 0.92));
@@ -41,12 +41,17 @@ app-projets {
 	box-shadow: 0 6px 16px rgba(1, 5, 53, 0.18);
 	z-index: 85;
 	transition: transform 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+
+	svg {
+		height: 30px;
+		width: 30px;
+	}
 }
 
 .back-to-top:hover {
 	background: linear-gradient(135deg, rgba(249, 210, 148, 1), rgba(233, 234, 236, 0.96));
-	transform: translateY(-1px);
-	box-shadow: 0 8px 18px rgba(1, 5, 53, 0.24);
+	transform: translateY(-2px);
+	box-shadow: 0 10px 20px rgba(1, 5, 53, 0.24);
 }
 
 .back-to-top:focus-visible {
