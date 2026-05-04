@@ -1,0 +1,96 @@
+<section class="contact-section" aria-labelledby="contact-title">
+	<div class="contact-shell">
+		<header class="contact-header">
+			<p class="eyebrow">Contact</p>
+			<h2 id="contact-title">Parlons de votre projet</h2>
+			<p class="intro">
+				Un formulaire clair, rapide et compatible mobile pour envoyer un message structuré directement vers la boîte mail du propriétaire.
+			</p>
+		</header>
+
+		<div class="contact-grid">
+			<form class="contact-form-card" [formGroup]="contactForm" (ngSubmit)="sendMail()" novalidate>
+				<div class="form-grid">
+					<label class="field">
+						<span>Prénom</span>
+						<input type="text" formControlName="firstName" autocomplete="given-name" placeholder="Votre prénom" />
+						@if (contactForm.controls.firstName.invalid && (contactForm.controls.firstName.touched || submitted())) {
+							<small class="field-error">Le prénom est requis.</small>
+						}
+					</label>
+
+					<label class="field">
+						<span>Nom</span>
+						<input type="text" formControlName="lastName" autocomplete="family-name" placeholder="Votre nom" />
+						@if (contactForm.controls.lastName.invalid && (contactForm.controls.lastName.touched || submitted())) {
+							<small class="field-error">Le nom est requis.</small>
+						}
+					</label>
+
+					<label class="field field-full">
+						<span>Adresse e-mail</span>
+						<input type="email" formControlName="email" autocomplete="email" placeholder="vous@exemple.com" />
+						@if (contactForm.controls.email.invalid && (contactForm.controls.email.touched || submitted())) {
+							<small class="field-error">Entrez une adresse e-mail valide.</small>
+						}
+					</label>
+
+					<label class="field">
+						<span>Sujet principal</span>
+						<select formControlName="subject">
+							@for (option of subjectOptions; track option.value) {
+								<option [value]="option.value">{{ option.label }}</option>
+							}
+						</select>
+					</label>
+
+					@if (!isCustomSubject()) {
+						<label class="field">
+							<span>Sous-sujet</span>
+							<select formControlName="subSubject">
+								@for (option of subSubjectOptions(); track option.value) {
+									<option [value]="option.value">{{ option.label }}</option>
+								}
+							</select>
+						</label>
+					} @else {
+						<label class="field">
+							<span>Autre précision</span>
+							<input type="text" formControlName="customSubSubject" placeholder="Décrivez le sujet" />
+							@if (contactForm.controls.customSubSubject.invalid && (contactForm.controls.customSubSubject.touched || submitted())) {
+								<small class="field-error">Ajoutez une précision.</small>
+							}
+						</label>
+					}
+
+					<label class="field field-full">
+						<span>Message</span>
+						<textarea formControlName="message" rows="7" placeholder="Décrivez votre besoin, votre contexte et vos délais."></textarea>
+						@if (contactForm.controls.message.invalid && (contactForm.controls.message.touched || submitted())) {
+							<small class="field-error">Le message doit contenir au moins 20 caractères.</small>
+						}
+					</label>
+				</div>
+
+				<div class="form-actions">
+					<button type="submit" class="send-button" [disabled]="isSending()">
+						@if (isSending()) {
+							Envoi en cours...
+						} @else {
+							Envoyer le message
+						}
+					</button>
+					<p class="form-note">Les champs sont validés avant l’ouverture du client mail.</p>
+				</div>
+
+				@if (sendSuccess()) {
+					<p class="form-status form-status-success" role="status" aria-live="polite">Message envoyé.</p>
+				}
+
+				@if (sendError()) {
+					<p class="form-status form-status-error" role="alert">{{ sendError() }}</p>
+				}
+			</form>
+		</div>
+	</div>
+</section>

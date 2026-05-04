@@ -1,0 +1,37 @@
+<footer class="site-footer" role="contentinfo">
+	<div class="footer-shell">
+		<div class="brand">
+			<a class="logo-link" href="#top" aria-label="Retour en haut">
+				<img src="logo-portfolio-nobg-favicon.png" alt="logo">
+			</a>
+			<div class="owner">
+				<strong class="owner-name">Tigane Guelloul</strong>
+				<span class="owner-role">Développeur · Front-end</span>
+			</div>
+		</div>
+
+		<div class="footer-columns">
+			<nav class="footer-col" aria-label="Pages">
+				<h4>Pages</h4>
+				<ul>
+					@for (p of pages; track p.href) {
+						<li><a href="{{p.href}}">{{p.label}}</a></li>
+					}
+				</ul>
+			</nav>
+
+			<div class="footer-col" aria-label="Réseaux sociaux">
+				<h4>Réseaux sociaux</h4>
+				<ul class="social-list">
+					@for (s of socials; track s.label) {
+						<li><a href="{{s.href}}" target="_blank" rel="noopener">{{s.label}}</a></li>
+					}
+				</ul>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<small>© {{ year() }} {{ ownerName }} — Tous droits réservés.</small>
+		</div>
+	</div>
+</footer>
