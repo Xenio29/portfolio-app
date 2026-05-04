@@ -17,10 +17,8 @@ export class Footer {
     { href: '#contact', label: 'Contact' },
   ];
 
-  // Replace these URLs with your actual social profiles
   protected readonly socials = [
-    { href: '#', label: 'GitHub' },
-    { href: '#', label: 'LinkedIn' },
-    { href: '#', label: 'Twitter' },
+    { href: 'https://github.com/Xenio29', label: 'GitHub' },
+    { href: 'https://www.linkedin.com/in/tigane-guelloul-077699406', label: 'LinkedIn' }
   ];
 }
